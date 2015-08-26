@@ -2,7 +2,7 @@ Package.describe({
     name: 'universe:utilities-blaze',
     version: '1.0.0',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'Universe Utilities for blaze, awesome templates helpers',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.
