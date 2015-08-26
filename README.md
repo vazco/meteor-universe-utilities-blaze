@@ -7,7 +7,7 @@ $ meteor add universe:utilities-blaze
 ## Template Helpers
 
 ### Compare helpers 
-- eq,
+- eq `{{#if eq 'a' 'a'}} {{/if}}`,
 - eqWeak,
 - gt,
 - gte,
@@ -16,11 +16,11 @@ $ meteor add universe:utilities-blaze
 - ne
 
 ### Logic helpers 
-- or,
+- or `{{#if or value1 value2}} {{/if}}`,
 - and
 
 ### Developers helpers
-- log
+- log `{{log .}}`
 - logTimeStart 
 template version of console.time
 - logTimeEnd
