@@ -1,5 +1,9 @@
 # Universe Utilities for blaze
 
+```sh
+$ meteor add universe:utilities-blaze
+```
+
 ## Template Helpers
 
 ### Compare helpers 
