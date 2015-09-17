@@ -55,3 +55,9 @@ returns UniUser object
 - concat
 - UniUtils 
 access to object UniUtils from template
+
+- getParentTemplateInstance (templateName, currentTemplateInstance)
+Gets instance parent of current template it works everywhere where Template.instance() works
+
+- getTemplateInstanceByDOM(domElemOrJQuery)
+Gets instance of template by DOM element useful when you need a template instance which is not your parent template
