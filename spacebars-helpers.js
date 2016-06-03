@@ -45,11 +45,11 @@ if(typeof FlowRouter === 'object'){ //Flow router support
 
 
 Template.registerHelper('formatDateMoment', function (v, format, tmpl) {
-    if(v === undefined){
+    if(v === undefined) {
         console.warn('formatDateMoment: date argument is undefined');
         return false;
     }
-    if(v === null){
+    if(!v) {
         v = undefined;
     }
     /* global moment: true */
