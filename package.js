@@ -1,6 +1,6 @@
 Package.describe({
     name: 'universe:utilities-blaze',
-    version: '1.5.1',
+    version: '1.5.2',
     // Brief, one-line summary of the package.
     summary: 'Universe Utilities for blaze, awesome templates helpers',
     // URL to the Git repository containing the source code for this package.

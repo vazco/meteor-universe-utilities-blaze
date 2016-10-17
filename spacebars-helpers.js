@@ -1,46 +1,51 @@
 'use strict';
 
-if(typeof FlowRouter === 'object'){ //Flow router support
+/*
+ *  routeIs is registered on startup because we have to wait for FlowRouter to load
+ */
+Meteor.startup(function () {
+    if(typeof FlowRouter === 'object'){ //Flow router support
 
-    Template.registerHelper('routeIs', function (routeName, params, tmpl) {
-        var rName = FlowRouter.getRouteName();
-        if (rName !== routeName) {
-            return false;
-        }
+        Template.registerHelper('routeIs', function (routeName, params, tmpl) {
+            var rName = FlowRouter.getRouteName();
+            if (rName !== routeName) {
+                return false;
+            }
 
-        var params_match = true;
-        if (tmpl !== undefined) {
-            _.each(params, function (value, name) {
-                if (FlowRouter.getParam(name) !== value) {
-                    params_match = false;
-                }
-            });
-        }
+            var params_match = true;
+            if (tmpl !== undefined) {
+                _.each(params, function (value, name) {
+                    if (FlowRouter.getParam(name) !== value) {
+                        params_match = false;
+                    }
+                });
+            }
 
-        return params_match;
-    });
-} else{ //iron router support 0.9 or 1.x
+            return params_match;
+        });
+    } else{ //iron router support 0.9 or 1.x
 
-    Template.registerHelper('routeIs', function (routeName, params, tmpl) {
-        var router = Router.current();
-        var rName = UniUtils.get(router, 'route') || {};
-        rName = rName.getName? rName.getName() : rName.name;
-        if (rName !== routeName) {
-            return false;
-        }
+        Template.registerHelper('routeIs', function (routeName, params, tmpl) {
+            var router = Router.current();
+            var rName = UniUtils.get(router, 'route') || {};
+            rName = rName.getName? rName.getName() : rName.name;
+            if (rName !== routeName) {
+                return false;
+            }
 
-        var params_match = true;
-        if (tmpl !== undefined) {
-            _.each(params, function (value, name) {
-                if (router.params[name] !== value) {
-                    params_match = false;
-                }
-            });
-        }
+            var params_match = true;
+            if (tmpl !== undefined) {
+                _.each(params, function (value, name) {
+                    if (router.params[name] !== value) {
+                        params_match = false;
+                    }
+                });
+            }
 
-        return params_match;
-    });
-}
+            return params_match;
+        });
+    }
+});
 
 
 
@@ -250,13 +255,13 @@ Template.registerHelper('UniConfig', function() {
 });
 
 /**
- * It will extend current context with given arguments 
+ * It will extend current context with given arguments
  * @argument key/value pairs given as key=value or "key" value into helper function
  * @return extendedContext {Object}
- * 
+ *
  * @example {{>templateName extendContext "key1" value1 "key2" value2}} or
  * @example {{>templateName extendContext key1=value1 key2=value2}}
- */ 
+ */
 Template.registerHelper('extendContext', function () {
     var toBeExtended = {};
     var extension = {};
