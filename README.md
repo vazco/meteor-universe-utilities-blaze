@@ -1,4 +1,8 @@
-# Universe Utilities for blaze
+<h1 align="center">
+    <a href="https://github.com/vazco">vazco</a>/Universe Utilities for Blaze
+</h1>
+
+&nbsp;
 
 ```sh
 $ meteor add universe:utilities-blaze
@@ -61,3 +65,9 @@ Gets instance parent of current template it works everywhere where Template.inst
 
 - getTemplateInstanceByDOM(domElemOrJQuery)
 Gets instance of template by DOM element useful when you need a template instance which is not your parent template
+
+## License
+
+<img src="https://vazco.eu/banner.png" align="right">
+
+**Like every package maintained by [Vazco](https://vazco.eu/), Universe Utilities for Blaze is [MIT licensed](https://github.com/vazco/uniforms/blob/master/LICENSE).**
